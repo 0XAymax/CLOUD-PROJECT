@@ -38,6 +38,7 @@ services:
       - app_network
   
   frontend:
+    platform: linux/arm64
     build: ./Frontend
     container_name: frontend
     restart: always
