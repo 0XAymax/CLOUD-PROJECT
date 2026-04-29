@@ -1,5 +1,6 @@
-import org.springframework.beans.factory.annotation.Value;
 package com.gestionVentesBackend.Config;
+import org.springframework.beans.factory.annotation.Value;
+
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
