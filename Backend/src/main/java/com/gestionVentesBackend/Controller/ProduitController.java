@@ -15,13 +15,7 @@ import java.util.*;
 
 @RestController
 @RequestMapping("/produits")
-@CrossOrigin(
-        origins = {"http://localhost:5173", "http://localhost:3000", "http://localhost:4200"},
-        methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE, RequestMethod.PATCH, RequestMethod.OPTIONS},
-        allowedHeaders = "*",
-        allowCredentials = "true",
-        maxAge = 3600
-)
+@CrossOrigin(origins = "${app.cors.origins}")
 public class ProduitController {
 
     private final ProduitRepository produitRepository;

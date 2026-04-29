@@ -1,3 +1,4 @@
+import org.springframework.beans.factory.annotation.Value;
 package com.gestionVentesBackend.Config;
 
 import org.springframework.context.annotation.Bean;
@@ -58,16 +59,13 @@ public class SecurityConfig {
         return http.build();
     }
 
+    @Value("${app.cors.origins}")
+    private String[] allowedOrigins;
+
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOrigins(Arrays.asList(
-                "http://localhost:5173",
-                "http://localhost:3000",
-                "http://localhost:4200",
-                "http://127.0.0.1:5173",
-                "http://127.0.0.1:3000"
-        ));
+        configuration.setAllowedOrigins(Arrays.asList(allowedOrigins));
         configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH"));
         configuration.setAllowedHeaders(Arrays.asList("*"));
         configuration.setAllowCredentials(true);

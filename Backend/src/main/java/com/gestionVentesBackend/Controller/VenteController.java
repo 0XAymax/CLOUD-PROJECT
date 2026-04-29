@@ -19,7 +19,7 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/ventes")
-@CrossOrigin(origins = {"http://localhost:5173", "http://localhost:3000"})
+@CrossOrigin(origins = "${app.cors.origins}")
 public class VenteController {
 
     @Autowired
